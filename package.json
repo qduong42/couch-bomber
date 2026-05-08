@@ -1,0 +1,19 @@
+{
+  "name": "couch-bomber",
+  "version": "0.1.0",
+  "description": "Two‑player Bomberman‑style prototype",
+  "main": "src/main.js",
+  "scripts": {
+    "dev": "npx http-server -c-1 -p 8080",
+    "build": "echo 'No build step – static files only'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "phaser": "^3.55.2"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
