@@ -21,13 +21,15 @@ class BootScene extends Phaser.Scene {
     this.textures.generate('bomb', { data: ['#000000'], pixelWidth: 1, pixelHeight: 1 });
     this.textures.generate('explosion', { data: ['#ff8800'], pixelWidth: 1, pixelHeight: 1 });
   }
-  create() { this.scene.start('Game'); }
+  create() { this.scene.start('Game');
+    console.log('BootScene complete'); }
 }
 
 class GameScene extends Phaser.Scene {
   constructor() { super('Game'); }
   create() {
     // 1. Build tilemap (simple 2‑D array)
+    console.log('Creating map');
     this.map = [];
     for (let y = 0; y < MAP_SIZE; y++) {
       this.map[y] = [];
@@ -56,6 +58,8 @@ class GameScene extends Phaser.Scene {
       sprite.bombsPlaced = 0;
       sprite.lastMove = 0; // for grid snapping timing
       this.players.push({ sprite, def });
+    console.log('Players created');
+    this.add.text(10, 30, 'Game started', {font:'16px sans-serif', fill:'#fff'});
     });
 
     // 3. Input handling
