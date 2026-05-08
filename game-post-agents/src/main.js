@@ -1,4 +1,5 @@
 // src/main.js – Minimal two‑player Bomberman prototype
+console.log('Game script loaded');
 // Phaser is loaded via CDN and available as global variable
 
 const TILE_SIZE = 32;
@@ -222,4 +223,9 @@ const config = {
   scene: [BootScene, GameScene]
 };
 
-new Phaser.Game(config);
+try {
+  new Phaser.Game(config);
+  console.log('Phaser game created');
+} catch (e) {
+  console.error('Phaser init error', e);
+}

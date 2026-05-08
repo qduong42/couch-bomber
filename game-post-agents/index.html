@@ -11,5 +11,15 @@
 <body>
   <script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.min.js"></script>
   <script type="module" src="src/main.js"></script>
+<pre id="log" style="position:fixed;bottom:0;left:0;background:#000;color:#0f0;padding:5px;max-height:30%;overflow:auto;"></pre>
+<script>
+  (function(){
+    const logEl=document.getElementById('log');
+    const origLog=console.log;
+    const origErr=console.error;
+    console.log=function(...args){origLog.apply(console,args);logEl.textContent+=args.join(' ')+'\n';};
+    console.error=function(...args){origErr.apply(console,args);logEl.textContent+='ERROR: '+args.join(' ')+'\n';};
+  })();
+</script>
 </body>
 </html>
