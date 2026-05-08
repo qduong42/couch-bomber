@@ -108,6 +108,7 @@ class GameScene extends Phaser.Scene {
   }
 
   updateGame() {
+    try {
     // ----- INPUT & MOVEMENT -----
     const dt = this.game.loop.delta / 1000; // seconds
     this.players.forEach(p => {
@@ -193,6 +194,8 @@ class GameScene extends Phaser.Scene {
       this.add.text(this.cameras.main.centerX, this.cameras.main.centerY, msg, { font: '32px sans-serif', fill: '#fff' }).setOrigin(0.5);
       this.scene.pause();
     }
+  } catch (e) {
+    console.error('UpdateGame error', e);
   }
 
   handlePlayerHit(playerSprite) {
