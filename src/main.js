@@ -1,5 +1,5 @@
 // src/main.js – Minimal two‑player Bomberman prototype
-import Phaser from 'phaser';
+// Phaser is loaded via CDN and available as global variable
 
 const TILE_SIZE = 32;
 const MAP_SIZE = 13; // 13x13 tiles (including border)
