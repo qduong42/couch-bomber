@@ -225,7 +225,7 @@ const config = {
   width: MAP_SIZE * TILE_SIZE,
   height: MAP_SIZE * TILE_SIZE,
   backgroundColor: '#222222',
-  parent: 'body',
+
   physics: { default: 'arcade', arcade: { debug: false } },
   scene: [BootScene, GameScene]
 };
